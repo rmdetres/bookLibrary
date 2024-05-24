@@ -1,0 +1,68 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            width: 200px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .card-author {
+            color: #555;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div id="card-container"></div>
+
+    <div class="card">
+    <form id="form" >
+        <label >author:</label><br>
+        <input type="text" id="author" name="author" value=""><br>
+        <label >title:</label><br>
+        <input type="text" id="title" name="title" value=""><br><br>
+        <label>number of pages:</label><br>
+        <input type="text" id="numberOfPages" name="numberOfPages" value=""><br><br>
+        <input type="submit" value="Add Book"> 
+    </form> 
+    </div>
+
+    <script src="script.js"></script>
+
+      
+</body>
+</html>
