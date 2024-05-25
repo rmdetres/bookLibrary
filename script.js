@@ -28,8 +28,37 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(myLibrary);
     }
 
+    /*
+    <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+
+
+    */
     function createCards(book) {
+    
         const container = document.getElementById('card-container');
+
+            // Create the label element with the class 'switch'
+            const switchLabel = document.createElement('label');
+            switchLabel.className = 'switch';
+
+            // Create the input element with type 'checkbox'
+            const checkboxInput = document.createElement('input');
+            checkboxInput.type = 'checkbox';
+
+            // Create the span element with the class 'slider round'
+            const sliderSpan = document.createElement('span');
+            sliderSpan.className = 'slider round';
+            sliderSpan.textContent = "read";
+
+            // Append the input and span elements to the label
+            switchLabel.appendChild(checkboxInput);
+            switchLabel.appendChild(sliderSpan);
+
+
+
 
         const card = document.createElement('div')
         card.className = 'card';
@@ -49,11 +78,23 @@ document.addEventListener('DOMContentLoaded', () => {
         numberPages.className = 'card-author';
         numberPages.textContent = book.pages;
 
+        const removeButton = document.createElement('button');
+        removeButton.className = 'card-removeButton';
+        removeButton.textContent = "Remove Book";
+
+        removeButton.addEventListener('click',(event)=>{
+            card.remove();
+        })
+    
+
         cardContent.appendChild(title);
         cardContent.appendChild(author);
         cardContent.appendChild(numberPages);
+        cardContent.appendChild(removeButton);
 
         card.appendChild(cardContent);
+        card.appendChild(switchLabel);
+
         container.appendChild(card);
     }
 
@@ -76,5 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         form.reset(); // Reset form fields after submission
     });
+
+    const removeButton = document.getElementsByClassName('card-removeButton');
+
+   
 
 });
